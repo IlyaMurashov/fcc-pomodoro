@@ -10,9 +10,10 @@ FreeCodeCamp "Build a Pomodoro Clock" project
 
 ### Project goals
 
+1. Understand and practice Redux
 1. Fix errors from `fcc-js-calc`
-  * Use TDD
-  * Better modularization of SCSS
-  * Beware redundant states
+   * Use TDD
+   * Better modularization of SCSS
+   * Beware redundant states
 2. Practice CSS animation
 3. Understand adaptive design and make the app fit different screen sizes
