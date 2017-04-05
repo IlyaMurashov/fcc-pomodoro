@@ -15,3 +15,4 @@ FreeCodeCamp "Build a Pomodoro Clock" project
   * Better modularization of SCSS
   * Beware redundant states
 2. Practice CSS animation
+3. Understand adaptive design and make the app fit different screen sizes
