@@ -6,7 +6,7 @@ export default function workTimeReducer(state = 25, action) {
       return (state + 1 > 99 ? 99 : state + 1);
 
     case types.DECREMENT_WORK_TIME:
-      return (state - 1 < 0 ? 0 : state - 1);
+      return (state - 1 < 1 ? 1 : state - 1);
 
     default:
       return state;
