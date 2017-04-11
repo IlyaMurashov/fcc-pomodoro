@@ -1,8 +1,15 @@
 import React from 'react';
 
-export const TimeDisplay = ({currentTime, appState}) => {
+const format = (currentTime) => {
+  const min = currentTime.minutes;
+  const sec = currentTime.seconds;
+
+  return (min + ':' + (sec < 10 ? ('0' + sec) : sec));
+};
+
+export const TimeDisplay = ({ currentTime, appState }) => {
   return (
-    <h1>{currentTime.minutes}{':'}{currentTime.seconds}, {appState}</h1>
+    <h1>{format(currentTime)}, {appState}</h1>
   );
 };
 

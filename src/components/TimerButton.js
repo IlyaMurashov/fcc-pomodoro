@@ -2,7 +2,6 @@ import React from 'react';
 
 function getIcon(buttonType) {
   if (buttonType === 'stop') return 'X';
-  if (buttonType === 'pause') return '||';
   if (buttonType === 'run') return '>';
 }
 
