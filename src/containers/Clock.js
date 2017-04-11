@@ -19,10 +19,10 @@ export class Clock extends React.Component {
         <TimeAdjGroup time={this.props.breakTime}
                       incrementTime={this.props.incrementBreakTime}
                       decrementTime={this.props.decrementBreakTime}/>
-        <TimeDisplay currentTime={'04:20'}/>
-        <TimerButton buttonType={'stop'} onClick={() => {}}/>
-        <TimerButton buttonType={'pause'} onClick={() => {}}/>
-        <TimerButton buttonType={'run'} onClick={() => {}}/>
+        <TimeDisplay currentTime={this.props.currentTime}
+                     appState={this.props.appState}/>
+        <TimerButton buttonType={'stop'} onClick={this.props.stopTimer}/>
+        <TimerButton buttonType={'run'} onClick={this.props.runTimer}/>
       </div>
     );
   }
@@ -34,13 +34,19 @@ Clock.propTypes = {
   incrementWorkTime: React.PropTypes.func.isRequired,
   decrementWorkTime: React.PropTypes.func.isRequired,
   incrementBreakTime: React.PropTypes.func.isRequired,
-  decrementBreakTime: React.PropTypes.func.isRequired
+  decrementBreakTime: React.PropTypes.func.isRequired,
+  appState: React.PropTypes.string.isRequired,
+  currentTime: React.PropTypes.object.isRequired,
+  runTimer: React.PropTypes.func.isRequired,
+  stopTimer: React.PropTypes.func.isRequired
 };
 
 function mapStateToProps(state) {
   return {
     workTime: state.workTime,
-    breakTime: state.breakTime
+    breakTime: state.breakTime,
+    appState: state.appState,
+    currentTime: state.currentTime
   };
 }
 
@@ -49,7 +55,9 @@ function mapDispatchToProps(dispatch) {
     incrementWorkTime: () => dispatch(actions.incrementWorkTime()),
     decrementWorkTime: () => dispatch(actions.decrementWorkTime()),
     incrementBreakTime: () => dispatch(actions.incrementBreakTime()),
-    decrementBreakTime: () => dispatch(actions.decrementBreakTime())
+    decrementBreakTime: () => dispatch(actions.decrementBreakTime()),
+    runTimer: () => dispatch(actions.runTimer()),
+    stopTimer: () => dispatch(actions.stopTimer())
   };
 }
 

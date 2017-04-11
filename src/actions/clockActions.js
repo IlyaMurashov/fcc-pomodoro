@@ -20,10 +20,6 @@ export function runTimer() {
   return {type: types.RUN};
 }
 
-export function pauseTimer() {
-  return {type: types.PAUSE};
-}
-
 export function stopTimer() {
   return {type: types.STOP};
 }

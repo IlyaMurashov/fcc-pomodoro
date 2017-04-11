@@ -1,6 +1,6 @@
 import * as types from '../actions/actionTypes';
 
-export default function breakTimeReducer(state = 5, action) {
+export default function breakTimeReducer(state, action) {
   switch (action.type) {
     case types.INCREMENT_BREAK_TIME:
       return (state + 1 > 25 ? 25 : state + 1);
