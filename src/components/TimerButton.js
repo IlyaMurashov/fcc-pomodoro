@@ -15,6 +15,6 @@ export const TimerButton = ({buttonType, onClick}) => {
 };
 
 TimerButton.propTypes = {
-  buttonType: React.PropTypes.oneOf(['stop', 'pause', 'run']).isRequired,
+  buttonType: React.PropTypes.oneOf(['stop', 'run']).isRequired,
   onClick: React.PropTypes.func.isRequired
 };
