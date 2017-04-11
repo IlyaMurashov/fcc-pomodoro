@@ -4,13 +4,28 @@ import workTimeReducer from './workTimeReducer';
 import timeReducer from './timerReducer';
 
 const initialState = {
-  workTime: 25,
-  breakTime: 5,
+  workTime: 1,
+  breakTime: 1,
   appState: 'stopped',
   currentTime: {
     minutes: 25,
     seconds: 0
   }
+};
+
+const timeIsUp = (state) => (state.currentTime.minutes === 0 && state.currentTime.seconds === 0);
+const switchAppState = (state) => {
+  const newAppState = (state.appState === 'work' ? 'break' : 'work');
+  const newCurrentTime = {
+    minutes: (newAppState === 'work' ? state.workTime : state.breakTime),
+    seconds: 0
+  };
+
+  return {
+    ...state,
+    appState: newAppState,
+    currentTime: newCurrentTime
+  };
 };
 
 export default function appReducer(state = initialState, action) {
@@ -58,12 +73,14 @@ export default function appReducer(state = initialState, action) {
         return state;
 
     case types.TICK:
-      if (state.appState === 'work' || state.appState === 'break') {
-        return {
-          ...state,
-          currentTime: timeReducer(state.currentTime, action)
-        };
-      }
+      if (state.appState === 'work' || state.appState === 'break')
+        if (timeIsUp(state))
+          return switchAppState(state);
+        else
+          return {
+            ...state,
+            currentTime: timeReducer(state.currentTime, action)
+          };
       else
         return state;
 
