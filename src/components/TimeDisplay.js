@@ -7,13 +7,12 @@ const format = (currentTime) => {
   return (min + ':' + (sec < 10 ? ('0' + sec) : sec));
 };
 
-export const TimeDisplay = ({ currentTime, appState }) => {
+export const TimeDisplay = ({ currentTime }) => {
   return (
-    <h1>{format(currentTime)}, {appState}</h1>
+    <h1>{format(currentTime)}</h1>
   );
 };
 
 TimeDisplay.propTypes = {
-  currentTime: React.PropTypes.object.isRequired,
-  appState: React.PropTypes.string.isRequired
+  currentTime: React.PropTypes.object.isRequired
 };

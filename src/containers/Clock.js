@@ -1,8 +1,8 @@
 import React from 'react';
-import {connect} from 'react-redux';
+import { connect } from 'react-redux';
 import * as actions from '../actions/clockActions';
-import {TimeDisplay} from '../components/TimeDisplay';
-import {TimerButton} from '../components/TimerButton';
+import { TimeDisplay } from '../components/TimeDisplay';
+import { TimerButton } from '../components/TimerButton';
 import WorkTime from "./WorkTime";
 import BreakTime from "./BreakTime";
 
@@ -17,8 +17,7 @@ export class Clock extends React.Component {
       <div className="pmdr-clock-wrapper">
         <WorkTime />
         <BreakTime />
-        <TimeDisplay currentTime={this.props.currentTime}
-                     appState={this.props.appState}/>
+        <TimeDisplay currentTime={this.props.currentTime}/>
         <TimerButton buttonType={'stop'} onClick={this.props.stopTimer}/>
         <TimerButton buttonType={'run'} onClick={this.props.runTimer}/>
       </div>
