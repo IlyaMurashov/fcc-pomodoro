@@ -6,6 +6,8 @@ import {Provider} from 'react-redux';
 import {App} from "./App";
 import {subscribeTickerTo} from './utils/ticker';
 
+require('./resources/notification.mp3');
+
 const store = configureStore();
 subscribeTickerTo(store);
 

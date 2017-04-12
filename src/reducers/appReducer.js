@@ -21,6 +21,10 @@ const switchAppState = (state) => {
     seconds: 0
   };
 
+  let sound = document.getElementById('soundMP3');
+  sound.volume = 0.4;
+  sound.play();
+
   return {
     ...state,
     appState: newAppState,

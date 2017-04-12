@@ -6,7 +6,6 @@ import { TimerButton } from '../components/TimerButton';
 import WorkTime from "./WorkTime";
 import BreakTime from "./BreakTime";
 
-
 export class Clock extends React.Component {
   constructor(props) {
     super(props);
