@@ -5,12 +5,13 @@ import {Clock} from './Clock';
 
 describe('Clock', () => {
   const props = {
-    workTime: 25,
-    breakTime: 5,
-    incrementWorkTime: () => {},
-    decrementWorkTime: () => {},
-    incrementBreakTime: () => {},
-    decrementBreakTime: () => {}
+    appState: 'stopped',
+    currentTime: {
+      minutes: 25,
+      seconds: 0
+    },
+    runTimer: () => {},
+    stopTimer: () => {}
   };
   let clockUT;
 
