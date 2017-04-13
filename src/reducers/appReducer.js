@@ -3,9 +3,9 @@ import breakTimeReducer from './breakTimeReducer';
 import workTimeReducer from './workTimeReducer';
 import timeReducer from './timerReducer';
 
-const initialState = {
-  workTime: 1,
-  breakTime: 1,
+export const initialState = {
+  workTime: 25,
+  breakTime: 5,
   appState: 'stopped',
   currentTime: {
     minutes: 25,
