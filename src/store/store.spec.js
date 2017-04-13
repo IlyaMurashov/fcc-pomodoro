@@ -1,4 +1,5 @@
 import { createStore } from 'redux';
+// import jest from 'jest';
 import appReducer, { initialState } from '../reducers/appReducer';
 import * as clockActions from '../actions/clockActions';
 import * as types from '../actions/actionTypes';
@@ -97,6 +98,36 @@ describe('Store', () => {
         ...newState,
         currentTime: { minutes: 24, seconds: 59 }
       });
+    });
+  });
+
+  describe('when workTime is up', () => {
+    let store;
+    beforeEach(() => {
+      store = createStore(appReducer, {
+        ...initialState,
+        workTime: 1
+      });
+      store.dispatch(clockActions.runTimer());
+    });
+
+    it('should switch to BREAK and play audio tag', () => {
+      const playMock = jest.fn();
+      const spy = jest.spyOn(document, 'getElementById').mockImplementation(() => ({
+        volume: 0,
+        play: playMock
+      }));
+
+      for (let i = 0; i < 60; i++) {
+        store.dispatch({ type: types.TICK });
+      }
+      expect(store.getState().appState).toBe('work');
+
+      store.dispatch({ type: types.TICK });
+      expect(spy).toHaveBeenCalledTimes(1);
+      expect(spy).toHaveBeenCalledWith('soundMP3');
+      expect(playMock).toHaveBeenCalledTimes(1);
+      expect(store.getState().appState).toBe('break');
     });
   });
 });
