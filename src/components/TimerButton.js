@@ -5,7 +5,7 @@ function getIcon(buttonType) {
   if (buttonType === 'run') return '>';
 }
 
-export const TimerButton = ({buttonType, onClick}) => {
+export const TimerButton = ({ buttonType, onClick }) => {
 
   return (
     <button onClick={onClick}>

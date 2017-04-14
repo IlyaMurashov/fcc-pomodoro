@@ -38,7 +38,6 @@ describe('TimeAdjGroup', () => {
 
     enzymeWrapper.childAt(1).simulate('click');
     expect(props.incrementTime).toHaveBeenCalledTimes(1);
-
   });
 
   it('on click - should call decrementTime cb', () => {
@@ -46,6 +45,5 @@ describe('TimeAdjGroup', () => {
 
     enzymeWrapper.childAt(2).simulate('click');
     expect(props.decrementTime).toHaveBeenCalledTimes(1);
-
   });
 });
