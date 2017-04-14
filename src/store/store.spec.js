@@ -1,5 +1,4 @@
 import { createStore } from 'redux';
-// import jest from 'jest';
 import appReducer, { initialState } from '../reducers/appReducer';
 import * as clockActions from '../actions/clockActions';
 import * as types from '../actions/actionTypes';
