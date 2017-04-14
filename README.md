@@ -2,6 +2,9 @@
 
 FreeCodeCamp "Build a Pomodoro Clock" project
 
+[![Build Status](https://travis-ci.org/IlyaMurashov/fcc-pomodoro.svg?branch=master)](https://travis-ci.org/IlyaMurashov/fcc-pomodoro)
+[![Coverage Status](https://coveralls.io/repos/github/IlyaMurashov/fcc-pomodoro/badge.svg?branch=master)](https://coveralls.io/github/IlyaMurashov/fcc-pomodoro?branch=master)
+
 ### Project requirements
 
 1. Can start a 25 minute pomodoro, and the timer will go off once 25 minutes has elapsed.
