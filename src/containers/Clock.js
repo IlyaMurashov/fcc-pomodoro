@@ -17,8 +17,8 @@ export class Clock extends React.Component {
         {this.props.appState === 'stopped' && <WorkTime/>}
         {this.props.appState === 'stopped' && <BreakTime/>}
         <TimeDisplay currentTime={this.props.currentTime}/>
-        <TimerButton buttonType={'stop'} onClick={this.props.stopTimer}/>
-        <TimerButton buttonType={'run'} onClick={this.props.runTimer}/>
+        {this.props.appState !== 'stopped' && <TimerButton buttonType={'stop'} onClick={this.props.stopTimer}/>}
+        {this.props.appState === 'stopped' && <TimerButton buttonType={'run'} onClick={this.props.runTimer}/>}
       </div>
     );
   }
