@@ -26,12 +26,12 @@ describe('Clock', () => {
 
   describe('should render all children with props', () => {
     it('WorkTime', () => {
-      const workTime = clockUT.children().first();
+      const workTime = clockUT.find('WorkTime');
       expect(workTime.props()).toEqual({});
     });
 
     it('BreakTime', () => {
-      const breakTime = clockUT.childAt(1);
+      const breakTime = clockUT.find('BreakTime');
       expect(breakTime.props()).toEqual({});
     });
 

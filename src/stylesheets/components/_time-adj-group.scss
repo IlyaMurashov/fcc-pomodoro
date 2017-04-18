@@ -1,0 +1,14 @@
+@import '../common/variables';
+
+.pmdr-time-adjust {
+  font: 300 200% $font-main;
+  user-select: none;
+  cursor: pointer;
+
+  &__display {
+    display: inline-block;
+    text-align: center;
+    width: 1.5em;
+    cursor: default;
+  }
+}

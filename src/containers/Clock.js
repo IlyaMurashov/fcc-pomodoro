@@ -14,8 +14,8 @@ export class Clock extends React.Component {
   render() {
     return (
       <div className="pmdr-clock-wrapper">
-        <WorkTime/>
-        <BreakTime/>
+        {this.props.appState === 'stopped' && <WorkTime/>}
+        {this.props.appState === 'stopped' && <BreakTime/>}
         <TimeDisplay currentTime={this.props.currentTime}/>
         <TimerButton buttonType={'stop'} onClick={this.props.stopTimer}/>
         <TimerButton buttonType={'run'} onClick={this.props.runTimer}/>

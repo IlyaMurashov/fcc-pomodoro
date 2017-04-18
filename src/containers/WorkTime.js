@@ -12,4 +12,6 @@ const WorkTime = connect(
   })
 )(TimeAdjGroup);
 
+WorkTime.displayName = 'WorkTime';
+
 export default WorkTime;

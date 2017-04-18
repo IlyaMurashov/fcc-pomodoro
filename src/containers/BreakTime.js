@@ -12,4 +12,6 @@ const BreakTime = connect(
   })
 )(TimeAdjGroup);
 
+BreakTime.displayName = 'BreakTime';
+
 export default BreakTime;
