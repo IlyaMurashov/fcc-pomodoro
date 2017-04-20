@@ -54,15 +54,8 @@ describe('Clock', () => {
       expect(display.props().currentTime).toEqual(props.currentTime);
     });
 
-    it('run TimerButton', () => {
-      const timerButtons = enzymeWrapper.find('TimerButton');
-      expect(timerButtons.length).toBe(1);
-      expect(timerButtons.at(0).props().buttonType).toBe('run');
-      expect(timerButtons.at(0).props().onClick.toString()).toEqual(props.runTimer.toString());
-    });
-
     it('total: 4 rendered children', () => {
-      expect(enzymeWrapper.children().length).toBe(4);
+      expect(enzymeWrapper.children().length).toBe(3);
     });
   });
 
@@ -80,15 +73,8 @@ describe('Clock', () => {
       expect(display.props().currentTime).toEqual(props.currentTime);
     });
 
-    it('stop TimerButton', () => {
-      const timerButtons = enzymeWrapper.find('TimerButton');
-      expect(timerButtons.length).toBe(1);
-      expect(timerButtons.at(0).props().buttonType).toBe('stop');
-      expect(timerButtons.at(0).props().onClick.toString()).toBe(props.stopTimer.toString());
-    });
-
     it('total: 2 rendered children', () => {
-      expect(enzymeWrapper.children().length).toBe(2);
+      expect(enzymeWrapper.children().length).toBe(1);
     });
   });
 
@@ -106,15 +92,8 @@ describe('Clock', () => {
       expect(display.props().currentTime).toEqual(props.currentTime);
     });
 
-    it('stop TimerButton', () => {
-      const timerButtons = enzymeWrapper.find('TimerButton');
-      expect(timerButtons.length).toBe(1);
-      expect(timerButtons.at(0).props().buttonType).toBe('stop');
-      expect(timerButtons.at(0).props().onClick.toString()).toBe(props.stopTimer.toString());
-    });
-
     it('total: 2 rendered children', () => {
-      expect(enzymeWrapper.children().length).toBe(2);
+      expect(enzymeWrapper.children().length).toBe(1);
     });
   });
 });

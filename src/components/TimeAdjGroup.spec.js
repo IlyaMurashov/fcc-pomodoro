@@ -5,6 +5,7 @@ import { TimeAdjGroup } from './TimeAdjGroup';
 function setup() {
   const props = {
     time: 5,
+    title: "A title",
     incrementTime: jest.fn(),
     decrementTime: jest.fn()
   };
@@ -23,14 +24,17 @@ describe('TimeAdjGroup', () => {
 
     expect(enzymeWrapper.first().type()).toBe('div');
 
-    expect(enzymeWrapper.childAt(0).type()).toBe('span');
-    expect(enzymeWrapper.childAt(0).text()).toBe('-');
+    expect(enzymeWrapper.childAt(0).type()).toBe('p');
+    expect(enzymeWrapper.childAt(0).text()).toBe(props.title);
 
-    expect(enzymeWrapper.childAt(1).type()).toBe('div');
-    expect(enzymeWrapper.childAt(1).text()).toBe(props.time.toString());
+    expect(enzymeWrapper.childAt(1).type()).toBe('span');
+    expect(enzymeWrapper.childAt(1).text()).toBe('-');
 
-    expect(enzymeWrapper.childAt(2).type()).toBe('span');
-    expect(enzymeWrapper.childAt(2).text()).toBe('+');
+    expect(enzymeWrapper.childAt(2).type()).toBe('div');
+    expect(enzymeWrapper.childAt(2).text()).toBe(props.time.toString());
+
+    expect(enzymeWrapper.childAt(3).type()).toBe('span');
+    expect(enzymeWrapper.childAt(3).text()).toBe('+');
   });
 
   it('on click + should call incrementTime cb', () => {

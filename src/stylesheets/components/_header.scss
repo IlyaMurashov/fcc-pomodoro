@@ -1,0 +1,11 @@
+@import "../common/variables";
+@import "../common/colors";
+
+.pmdr-header {
+  font: 400 300% $font-main;
+  color: $dark-red;
+  text-align: center;
+  text-shadow: 1px 1px 0 $light-pink,
+              2px 2px 0 $light-pink,
+              3px 3px 0 $light-pink;
+}

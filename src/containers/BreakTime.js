@@ -4,6 +4,8 @@ import { TimeAdjGroup } from "../components/TimeAdjGroup";
 
 const BreakTime = connect(
   (state) => ({
+    title: 'break time',
+    appState: state.appState,
     time: state.breakTime,
   }),
   dispatch => ({

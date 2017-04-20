@@ -1,0 +1,13 @@
+@import "../common/variables";
+@import "../common/colors";
+
+.pmdr-footer {
+  margin-top: 50px;
+  text-align: center;
+  font: 300 85% $font-main;
+
+  a {
+    text-decoration: none;
+    color: $light-green;
+  }
+}

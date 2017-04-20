@@ -1,0 +1,64 @@
+@import '../common/variables';
+@import '../common/colors';
+
+// TODO: table instead of flexbox?
+.pmdr-round-face {
+  background-color: $dark-grey;
+  color: $light-grey;
+  border-radius: 100%;
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  bottom: 0;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  display: flex;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.25);
+  transition: width 1s ease,
+              height 1s ease,
+              left 1s ease,
+              right 1s ease,
+              background-color 1s ease,
+              box-shadow 0.3s ease-in-out;
+
+  &:hover {
+    box-shadow: 8px 8px 8px rgba(0,0,0,0.25);
+  }
+
+  p {
+    margin: auto;
+    font: 300 300% $font-main;
+    user-select: none;
+    transition: font 1s ease;
+  }
+
+  &.-full {
+    width: 95%;
+    height: 95%;
+    left: 2.5%;
+    right: 2.5%;
+  }
+
+  &.-work {
+    background-color: $light-pink;
+
+    p {
+      color: $dark-red;
+    }
+  }
+
+  &.-break {
+    background-color: $light-grey;
+
+    p {
+      color: $light-green;
+    }
+  }
+
+  p.-full {
+    font: 300 500% $font-main;
+  }
+}

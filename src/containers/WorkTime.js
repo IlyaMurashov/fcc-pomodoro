@@ -4,6 +4,8 @@ import { TimeAdjGroup } from "../components/TimeAdjGroup";
 
 const WorkTime = connect(
   (state) => ({
+    title: 'work time',
+    appState: state.appState,
     time: state.workTime,
   }),
   dispatch => ({

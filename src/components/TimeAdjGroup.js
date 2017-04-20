@@ -3,6 +3,7 @@ import React from 'react';
 export const TimeAdjGroup = (props) => {
   return (
     <div className="pmdr-time-adjust">
+      <p className="pmdr-time-adjust__title">{props.title}</p>
       <span className="pmdr-time-adjust__control--minus"
         onClick={() => {
           props.decrementTime();
@@ -23,6 +24,7 @@ export const TimeAdjGroup = (props) => {
 };
 
 TimeAdjGroup.propTypes = {
+  title: React.PropTypes.string.isRequired,
   time: React.PropTypes.number.isRequired,
   incrementTime: React.PropTypes.func.isRequired,
   decrementTime: React.PropTypes.func.isRequired
