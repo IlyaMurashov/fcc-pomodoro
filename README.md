@@ -14,9 +14,16 @@ FreeCodeCamp "Build a Pomodoro Clock" project
 ### Project goals
 
 1. Understand and practice Redux
-1. Fix errors from `fcc-js-calc`
+2. Fix errors from `fcc-js-calc`
    * Use TDD
    * Better modularization of SCSS
    * Beware redundant states
-2. Practice CSS animation
-3. Understand adaptive design and make the app fit different screen sizes
+3. Practice CSS animation
+4. Understand adaptive design and make the app fit different screen sizes
+5. Setup CI (Travis & Coverall)
+
+### Known issues
+
+1. Wasn't able to disable zooming for iOS Safari
+2. Responsivness in broken for Safari on Mac
+3. Call to notification.mp3 is not pure
